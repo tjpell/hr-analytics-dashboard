@@ -1,0 +1,66 @@
+Applied Materials Data Engineering Challenge
+
+For this challenge, we ask that you implement a solution at home in your own time. Please send us your code and results within a week. If you need more time, let us know. 
+If you are invited for an onsite interview following the take-home challenge, it will include a review of your solution and your findings.
+
+
+ASSIGNMENT:
+Your data scientist has provided you with their exciting new model that predicts which employees will leave the company. They've come to you for help in building the pipeline and deploying the prediction as a service to the HR department. 
+
+Fields in the dataset include:
+Employee ID
+Job Satisfaction
+Last evaluation
+Number of projects
+Average monthly hours
+Time spent at the company
+Whether they have had a work accident
+Whether they have had a promotion in the last 5 years
+Department
+Salary
+Whether the employee has left
+*This dataset is simulated
+
+The model is written in Python version 3.6.0
+Library versions used in building the model include:
+Pandas: 0.20.3
+scikit-learn: 0.19.1
+
+Files included:
+HR_sqlite.db - A SQLite database containing all the data
+train.csv - Training data used for model training
+test.csv - Test data used for model validation
+HRmodel.py - Model that predicts which employees will leave the company
+
+Create a service that allows the HR business partner to get predictions from the model - both for existing employees and new employees.
+
+Minimum requirements:
+Your code should allow the user to enter an employee ID of an existing employee and get a prediction output.
+Your code should allow the user to supply employee features data and get a prediction output even if the employee does not exist in the database.
+
+Features to consider implementing or discussing:
+Changing the code to read from a database instead of csv files 
+Does this service allow the user to retrain the model or refresh the data source?
+How does this service track model performance (e.g. accuracy) over time? Is it tracked in a database? How is the database structured and what parts of the model/data are retained?
+How does the service output the results to the (non-technical) user e.g. simple web-app? 
+What recommendations would you make to your data scientist for future models?
+
+README
+Include the following items in your README file:
+Instructions on how to run your application.
+Description of the problem and solution.
+Reasoning behind your technical choices, including architectural.
+Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
+
+
+HOW WE REVIEW
+We value quality over feature-completeness. It is fine to leave things aside provided you call them out in your project's README.  
+Clarity: does the README clearly and concisely explain the problem and solution? 
+Correctness: does the application do what was asked? If there is anything missing, does the README explain why it is missing?
+Code quality: is the code simple, easy to understand, and maintainable? 
+Testing: how thorough are the automated tests? Will they be difficult to change if the requirements of the application were to change? Are there some unit and some integration tests?
+We're not looking for full coverage (given time constraints) but just trying to get a feel for your testing skills.
+UX (if applicable): is the web interface understandable and easy to use? Is the API intuitive?
+Technical choices: do choices of libraries, databases, architecture etc. seem appropriate for the chosen application?
+Production-readiness: does the code include monitoring? logging? proper error handling?
+Security: are there any obvious vulnerabilities?

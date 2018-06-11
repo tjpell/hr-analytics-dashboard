@@ -1,0 +1,13 @@
+<div class="inner">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <h3>Uh oh</h3>
+            <ul>
+                {% for message in messages %}
+                    <t style="color=black">{{ message }}</t>
+                {% endfor %}
+                <t style="color=black">Please try again.</t>
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>

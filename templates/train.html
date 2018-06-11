@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Replace me with training infrastructure -->
+    <section id="one">
+        <div class="inner">
+            <header>
+                <h2>AMAT Dashboard: Retrain the model</h2>
+            </header>
+            <p>Simply select one of the following options, in order to retrain the model.
+            Just include the most recent employee ID number to consider and we handle the rest.</p>
+
+            {% include "_flashing.html" %}
+            {% from "_formhelpers.html" import render_field %}
+
+            <h3>Retrain Model: This Takes a Minute</h3>
+            <form method="POST" action="/new_model">
+                <dl>{{ render_field(train_model_form.emp_id) }}</dl>
+                <p><input type=submit value=Retrain>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Replace me with prediction infrastructure -->
+    <section id="one">
+        <div class="inner">
+            <header>
+                    <h2>AMAT Dashboard: New Employee Churn Model for data up to employee number {{emp_id}} </h2>
+            </header>
+            <p>The model appears to be performing with {{ test_score }} test accuracy.</p>
+            <ul class="actions">
+                <li><a href="/predict" class="button alt">Predict Churn</a></li>
+                <li><a href="/train" class="button alt">Retrain Model</a></li>
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}

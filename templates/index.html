@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	<!-- How to -->
+	<section id="one">
+		<div class="inner">
+			<header>
+				<h2>AMAT Employee Churn Dashboard: How to use</h2>
+			</header>
+			<p>Simply select one of the following options, in order to use model to interact with database.
+			Options include predicting about existing or hypothetical employees, retraining the model, and querying the database.</p>
+			<ul class="actions">
+				<li><a href="/predict" class="button alt">Predict EMployee Churn</a></li>
+				<li><a href="/train" class="button alt">Retrain Model</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Image -->
+	<section id="main">
+		<div class="inner">
+			<h2>An Easy, Interactive Way to Use Our Employee Churn Model</h2>
+			<a href="#" class="image fit"><img src="static/images/workplace.jpg" alt="" /></a>
+		</div>
+	</section>
+
+{% endblock %}

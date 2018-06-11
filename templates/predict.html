@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Talk to prediction infrastructure -->
+    <section id="one">
+        <div class="inner">
+            <header>
+                <h2>AMAT Dashboard: Predict Employee Churn</h2>
+            </header>
+            <p> Simply fill out one of the following forms, in order to use most recent model.
+                Options include predicting by employee ID number, or entering a hypothetical employee. </p>
+            <p> If entering a hypothetical employee, all fields must be completed. If entering by Employee ID
+                and employee does not exist, you will get redirected back to this page. </p>
+            <p> If values entered into fields are out of bounds, we will attempt to fix them. </p>
+
+            {% include "_flashing.html" %}
+            {% from "_formhelpers.html" import render_field %}
+
+            <h3>Predict Employee Churn by ID Lookup</h3>
+            <form method="POST" action="/prediction">
+                <dl>{{ render_field(id_form.emp_id) }}</dl>
+                <p><input type=submit value=Lookup>
+            </form>
+
+            <h3>Generate Hypothetical Employee and Predict Churn</h3>
+            <form method="POST" action="/prediction">
+                <dl>{{ render_field(new_emp_form.satisfaction_level) }}</dl>
+                <dl>{{ render_field(new_emp_form.last_evaluation) }}</dl>
+                <dl>{{ render_field(new_emp_form.number_project) }}</dl>
+                <dl>{{ render_field(new_emp_form.average_montly_hours) }}</dl>
+                <dl>{{ render_field(new_emp_form.time_spend_company) }}</dl>
+                <dl>{{ render_field(new_emp_form.Work_accident) }}</dl>
+                <dl>{{ render_field(new_emp_form.promotion_last_5years) }}</dl>
+                <dl>{{ render_field(new_emp_form.department) }}</dl>
+                <dl>{{ render_field(new_emp_form.salary) }}</dl>
+                <p><input type=submit value=Generate>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

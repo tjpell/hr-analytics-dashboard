@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- Replace me with prediction infrastructure -->
+    <section id="one">
+        <div class="inner">
+            <header>
+                {% if emp_id != 'custom' %}
+                    <h2>AMAT Dashboard: Employee Churn Prediction for employee number {{emp_id}}</h2>
+                {% else %}
+                    <h2>AMAT Dashboard: Employee Churn Prediction for custom employee</h2>
+                {% endif %}
+            </header>
+            <p>The we expect that it is {{ pred }} that this employee will leave with probability {{ proba }}</p>
+            <table style="width:100%">
+                <h3>Employee Info</h3>
+                <tr>{% for row in info[:5] %}<th>{{row[0]}}</th>{% endfor %} </tr>
+                <tr>{% for row in info[:5] %}<th>{{row[1]}}</th>{% endfor %} </tr>
+             </table>
+            <br>
+            <table>
+                <tr>{% for row in info[5:] %}<th>{{row[0]}}</th>{% endfor %} </tr>
+                <tr>{% for row in info[5:] %}<th>{{row[1]}}</th>{% endfor %} </tr>
+            </table>
+            <ul class="actions">
+                <li><a href="/predict" class="button alt">Predict Again</a></li>
+                <li><a href="/train" class="button alt">Retrain Model</a></li>
+            </ul>
+        </div>
+    </section>
+
+{% endblock %}
